@@ -1,7 +1,11 @@
 // Make interactions with the database.
 
+// Includes db.
+const db = require('../database/db');
+const Posts = db.models.posts;
+
 // Used to simulate a database temporarily.
-const posts = [
+/*const posts = [
   {
     id: 0,
     title: "Title post 1",
@@ -17,11 +21,12 @@ const posts = [
     title: "Title post 3",
     description: "Description post 3",
   }
-];
+];*/
 
 // Returns all posts stored in the database.
 function getAllPosts() {
-  return posts;
+  //return posts;
+  return Posts.findAll({});
 }
 
 // Export the functions.
