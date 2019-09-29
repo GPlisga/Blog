@@ -1,17 +1,3 @@
-.sidebar {
-  width:33.33%;
-  float:left;
-  padding: 0 10px;
-}
-
-.createPost {
-  background-color: #333;
-  padding: 10px 50px;
-  color:#EEE;
-  font-size: 20px;
-  margin-top:10px;
-}
-
 body {
   font-style: italic;
   background-color: #f2f2f2;
