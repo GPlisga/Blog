@@ -18,10 +18,15 @@ db.sequelize.sync().done(() => {
   const app = express();
   const port = process.env.PORT || 3000;
 
+  app.use(bodyParser.json());
+
   // Server static files.
   app.use("/", express.static(path.join(__dirname, "client")));
 
+  // Get all posts.
   app.get("/posts", controller.getAllPosts);
+  // Create a blog post.
+  app.post("/admin/posts/create", controller.setPost);
 
   // Start the express server.
   app.listen(port);
