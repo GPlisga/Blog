@@ -7,9 +7,14 @@ const api = (method, path, body = null) => {
         if (this.status == 200){
           // Response.
           const resp = xhttp.responseText;
-          const data = JSON.parse(resp);
-          // Returns a Promise object that is resolved.
-          resolve(data);
+          try {
+            const data = JSON.parse(resp);
+            // Returns a Promise object that is resolved.
+            resolve(data);
+          } catch (e) {
+            // Returns a Promise object that is resolved.
+            resolve(resp);
+          }
         } else if (this.status == 500){
           // Returns a Promise object that is rejected.
           reject(xhttp.statusText);
